@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_cruise_line_callouts",
+  "info": {
+    "displayName": "callout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "saving": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

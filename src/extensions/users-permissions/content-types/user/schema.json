@@ -1,0 +1,136 @@
+{
+  "kind": "collectionType",
+  "collectionName": "up_users",
+  "info": {
+    "name": "user",
+    "description": "",
+    "singularName": "user",
+    "pluralName": "users",
+    "displayName": "User"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "unique": true,
+      "configurable": false,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "configurable": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 6,
+      "configurable": false,
+      "private": true,
+      "searchable": false
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true,
+      "searchable": false
+    },
+    "confirmationToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true,
+      "searchable": false
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": true,
+      "configurable": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "role": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.role",
+      "inversedBy": "users",
+      "configurable": false
+    },
+    "firstname": {
+      "type": "string",
+      "required": true
+    },
+    "lastname": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "enumeration",
+      "enum": [
+        "Mr",
+        "Mrs",
+        "Ms"
+      ]
+    },
+    "orderCount": {
+      "type": "integer"
+    },
+    "membershipNumber": {
+      "type": "biginteger"
+    },
+    "interests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::interest.interest",
+      "mappedBy": "user"
+    },
+    "regions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::region.region",
+      "mappedBy": "user"
+    },
+    "departures": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::departure.departure",
+      "mappedBy": "user"
+    },
+    "terms": {
+      "type": "boolean",
+      "default": true,
+      "required": false
+    },
+    "marketing": {
+      "type": "boolean",
+      "default": true,
+      "required": false
+    },
+    "privacy": {
+      "type": "boolean",
+      "default": true
+    },
+    "dob": {
+      "type": "date"
+    },
+    "address": {
+      "type": "string"
+    },
+    "country": {
+      "type": "customField",
+      "customField": "plugin::country-select.country"
+    },
+    "mobile": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "kind": "collectionType",
+  "collectionName": "offers",
+  "info": {
+    "singularName": "offer",
+    "pluralName": "offers",
+    "displayName": "Offer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cruise_line": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cruise-line.cruise-line"
+    },
+    "interests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::interest.interest",
+      "mappedBy": "offer"
+    },
+    "title": {
+      "type": "string"
+    },
+    "featured_image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "nights": {
+      "type": "integer"
+    },
+    "season": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::season.season"
+    },
+    "departure": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::departure.departure"
+    },
+    "destinations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::destination.destination",
+      "mappedBy": "offer"
+    },
+    "expiry_date": {
+      "type": "date"
+    },
+    "price": {
+      "type": "float"
+    },
+    "offer_price": {
+      "type": "float"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "editors_choice": {
+      "type": "boolean"
+    },
+    "recommended": {
+      "type": "boolean",
+      "default": false
+    },
+    "new_world_cruise": {
+      "type": "boolean"
+    },
+    "affiliate_link": {
+      "type": "string"
+    },
+    "coupon": {
+      "type": "string"
+    },
+    "terms_conditions": {
+      "type": "richtext"
+    },
+    "excerpt": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "departure_date": {
+      "type": "date",
+      "required": false
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "video": {
+      "type": "customField",
+      "customField": "plugin::video-field.video"
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Saving": {
+      "type": "string"
+    }
+  }
+}

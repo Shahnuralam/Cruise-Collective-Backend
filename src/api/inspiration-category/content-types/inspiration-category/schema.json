@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inspiration_categories",
+  "info": {
+    "singularName": "inspiration-category",
+    "pluralName": "inspiration-categories",
+    "displayName": "Inspiration Category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "insipration": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::insipration.insipration",
+      "inversedBy": "inspiration_categories"
+    },
+    "excerpt": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

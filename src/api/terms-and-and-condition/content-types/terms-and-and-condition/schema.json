@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "terms_and_and_conditions",
+  "info": {
+    "singularName": "terms-and-and-condition",
+    "pluralName": "terms-and-and-conditions",
+    "displayName": "Terms & Condition",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "insiprations",
+  "info": {
+    "singularName": "insipration",
+    "pluralName": "insiprations",
+    "displayName": "Insipration",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "inspiration_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::inspiration-category.inspiration-category",
+      "mappedBy": "insipration"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "featured_image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "video": {
+      "type": "customField",
+      "customField": "plugin::video-field.video"
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "excerpt": {
+      "type": "text"
+    }
+  }
+}

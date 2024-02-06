@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_homepage_sliders",
+  "info": {
+    "displayName": "Sliders",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "permalink": {
+      "type": "string"
+    },
+    "video": {
+      "type": "customField",
+      "customField": "plugin::video-field.video"
+    }
+  }
+}
